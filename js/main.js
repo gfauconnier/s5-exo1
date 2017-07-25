@@ -28,7 +28,6 @@ var autorisations = {
     this.listePays.includes(user.pays.toUpperCase()) ? alert("Pays autorisé") : alert("Pays non autorisé ! Dégagez !");
   },
   moyenOk: function() {
-    //this.listeMoyens.some(function(v) { return user.moyens.map(function(x){return x.toUpperCase();}).indexOf(v) != -1; }) ? alert("Type paiment accepté") : alert("Type paiment refusé");
     var result = this.listeMoyens.filter(function(item) { return user.moyens.map(function(x){return x.toUpperCase();}).indexOf(item) > -1});
     result.length ? alert("Moyens autorisés : " + result) : alert("Aucun moyens autorisés");
   },
