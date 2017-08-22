@@ -1,5 +1,6 @@
 var tab = [];
 
+// Creates an object named 'user'
 var user = {
   prenom: "Greg",
   nom: "Fauconnier",
@@ -17,6 +18,7 @@ var user = {
   }
 };
 
+//creates an object named 'autorisations'
 var autorisations = {
   listePays: ["FRANCE", "ESPAGNE", "ITALIE", "ALLEMAGNE"],
   listeMoyens: ["VISA", "CB"],
@@ -25,9 +27,11 @@ var autorisations = {
     user.age >= this.ageMin ? alert("Vous etes autorisé") : alert("Vous etes trop jeune");
   },
   paysOk: function(){
+    // checks if user.pays is in autorisations.listePays
     this.listePays.includes(user.pays.toUpperCase()) ? alert("Pays autorisé") : alert("Pays non autorisé ! Dégagez !");
   },
   moyenOk: function() {
+    // checks if one or more elements of user.moyens is in autorisations.listeMoyens
     var result = this.listeMoyens.filter(function(item) { return user.moyens.map(function(x){return x.toUpperCase();}).indexOf(item) > -1});
     result.length ? alert("Moyens autorisés : " + result) : alert("Aucun moyens autorisés");
   },
